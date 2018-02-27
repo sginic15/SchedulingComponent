@@ -22,7 +22,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@Builder
+@Builder(toBuilder=true)
 public class WorkEvent extends Event {
 
 	private CheckList checkList;
