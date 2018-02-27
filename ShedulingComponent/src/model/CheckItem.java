@@ -19,4 +19,5 @@ public class CheckItem {
 
 	private String name;
 	private boolean value;
+	
 }
