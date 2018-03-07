@@ -20,11 +20,11 @@ public class EventFactory {
 			return null;
 		}
 
-		if (eventType.equalsIgnoreCase("WORK")) {
+		if (eventType.equalsIgnoreCase("WorkEvent")) {
 			return new WorkEvent();
 		}
 
-		if (eventType.equalsIgnoreCase("FUN")) {
+		if (eventType.equalsIgnoreCase("FunEvent")) {
 			return new FunEvent();
 		}
 

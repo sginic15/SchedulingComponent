@@ -17,11 +17,11 @@ import model.Schedule;
 public interface ScheduleImportExport<T> {
 	
 	/**
-	 * @param file JSON file which contains data for schedule
+	 * @param file data source which contains data for schedule
 	 * @return Schedule object from JSON
 	 * @throws IOException IO Exception
 	 */
-	public Schedule importSheduleFromJSONFile(T source) throws IOException;
+	public Schedule importShedule(T source) throws IOException;
 	
 	
 	/**
@@ -30,6 +30,6 @@ public interface ScheduleImportExport<T> {
 	 * @throws InvalidSheduleExcepiton If activities overlaps
 	 * @throws IOException IO Exception
 	 */
-	public void exportSheduleToJSONFile(T destination,Schedule schedule) throws InvalidSheduleExcepiton,IOException;
+	public void exportShedule(T destination,Schedule schedule) throws InvalidSheduleExcepiton,IOException;
 
 }

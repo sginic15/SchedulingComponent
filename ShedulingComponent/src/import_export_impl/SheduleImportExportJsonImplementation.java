@@ -20,7 +20,7 @@ import model.Schedule;
 public class SheduleImportExportJsonImplementation implements SheduleImportExportJSON {
 
 	@Override
-	public Schedule importSheduleFromJSONFile(File file) throws IOException {
+	public Schedule importShedule(File file) throws IOException {
 		Gson gson = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(Event.class,new InterfaceAdapter<Event>()).create();
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		Schedule schedule = gson.fromJson(reader, Schedule.class);
@@ -29,7 +29,7 @@ public class SheduleImportExportJsonImplementation implements SheduleImportExpor
 	}
 
 	@Override
-	public void exportSheduleToJSONFile(File file, Schedule schedule) throws InvalidSheduleExcepiton, IOException {
+	public void exportShedule(File file, Schedule schedule) throws InvalidSheduleExcepiton, IOException {
 		schedule.checkSchedule();
 		Gson gson = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(Event.class,new InterfaceAdapter<Event>()).create();
 		Writer writer = new FileWriter(file);

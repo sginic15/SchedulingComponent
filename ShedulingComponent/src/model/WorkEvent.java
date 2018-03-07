@@ -2,13 +2,6 @@ package model;
 
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 /**
  * 
  * Represents work activity(for example finish project)
@@ -17,15 +10,33 @@ import lombok.ToString;
  *
  */
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-@Builder(toBuilder=true)
 public class WorkEvent extends Event {
 
 	private CheckList checkList;
 	private Priority priority = Priority.MEDIUM;
+	
+	public WorkEvent() {
+		
+	}
+	
+	public WorkEvent(CheckList checkList, Priority priority) {
+		super();
+		this.checkList = checkList;
+		this.priority = priority;
+	}
+	public CheckList getCheckList() {
+		return checkList;
+	}
+	public void setCheckList(CheckList checkList) {
+		this.checkList = checkList;
+	}
+	public Priority getPriority() {
+		return priority;
+	}
+	public void setPriority(Priority priority) {
+		this.priority = priority;
+	}
+	
+	
 
 }

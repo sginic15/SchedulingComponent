@@ -1,11 +1,5 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
  * 
@@ -15,12 +9,6 @@ import lombok.ToString;
  *
  */
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-@Builder
 @Background
 public class FunEvent extends Event {
 
@@ -34,5 +22,42 @@ public class FunEvent extends Event {
 	 * Represents the cost of event
 	 */
 	private int cost;
+	
+	public FunEvent() {
+		
+	}
+
+	public FunEvent(Rating rating, String impressions, int cost) {
+		super();
+		this.rating = rating;
+		this.impressions = impressions;
+		this.cost = cost;
+	}
+
+	public Rating getRating() {
+		return rating;
+	}
+
+	public void setRating(Rating rating) {
+		this.rating = rating;
+	}
+
+	public String getImpressions() {
+		return impressions;
+	}
+
+	public void setImpressions(String impressions) {
+		this.impressions = impressions;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+	
+	
 
 }

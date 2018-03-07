@@ -16,7 +16,7 @@ public class test1 {
 		SheduleImportExportJsonImplementation sheduleImportExportJsonImplementation = new SheduleImportExportJsonImplementation();
 
 		try {
-			Schedule schedule=sheduleImportExportJsonImplementation.importSheduleFromJSONFile(new File("Proba.json"));
+			Schedule schedule=sheduleImportExportJsonImplementation.importShedule(new File("Proba.json"));
 			System.out.println(schedule);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

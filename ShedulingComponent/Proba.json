@@ -5,7 +5,7 @@
       "data": {
         "rating": "OK",
         "cost": 0,
-        "title": "event1",
+        "title": "event11111",
         "startActivity": {
           "date": {
             "year": 2018,
@@ -40,7 +40,7 @@
       "type": "model.WorkEvent",
       "data": {
         "priority": "MEDIUM",
-        "title": "event2",
+        "title": "event22222222",
         "startActivity": {
           "date": {
             "year": 2018,

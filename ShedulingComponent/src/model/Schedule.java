@@ -6,22 +6,24 @@ import java.util.Comparator;
 import java.util.List;
 
 import exceptions.InvalidSheduleExcepiton;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Delegate;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = { "title" })
+
 public class Schedule {
 
 	private String title;
 	private String description;
-	@lombok.experimental.Delegate
 	private List<Event> events = new ArrayList<>();
+	
+	public Schedule() {
+		
+	}
+
+	public Schedule(String title, String description, List<Event> events) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.events = events;
+	}
 
 	public void sortSchedule() {
 		events.sort((Event event1, Event event2) -> event1.getStartActivity().compareTo(event2.getStartActivity()));
@@ -37,5 +39,49 @@ public class Schedule {
 			}
 		}
 	}
+	
+	@Override
+	public boolean equals(Object other) {
+		
+		if(!(other instanceof Schedule)) {
+			return false;
+		}
+		
+		Schedule otherEvent=(Schedule)other;
+		
+		return this.title.equals(otherEvent.getTitle());	
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public boolean add(Event arg0) {
+		return events.add(arg0);
+	}
+	
+	
+	
+	
 
 }
