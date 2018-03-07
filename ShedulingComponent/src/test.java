@@ -30,7 +30,7 @@ public class test {
 		workEvent1.setTitle("event11111");
 		schedule.add(workEvent1);
 
-		Event workEvent2 = eventFactory.getEvent("WorkEvent");
+		Event workEvent2 = eventFactory.getEvent("WorkEvent"); 
 		workEvent2.setStartActivity(LocalDateTime.of(2018, 1, 13, 12, 25));
 		workEvent2.setEndActivity(LocalDateTime.of(2018, 1, 25, 12, 25));
 		workEvent2.setTitle("event22222222");
